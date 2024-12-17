@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <link rel=stylesheet href=./src/css/style.css>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script type=module src=./src/js/index.js defer></script>
+  <title>Task 7 - Ajax</title>
+</head>
+
+<body>
+  <header>
+    <h1>Find Your Gas Station</h1>
+  </header>
+  <main>
+    <section class="filters">
+      <label for="province">Province:</label>
+      <select id="province">
+        <option value="">Select Province</option>
+      </select>
+      <label for="municipality">Municipality:</label>
+      <select id="municipality" disabled>
+        <option value="">Select Municipality</option>
+      </select>
+      <label for="fuel">Fuel Type:</label>
+      <select id="fuel">
+        <option value="">Select Fuel Type</option>
+        <option value="Diesel">Diesel</option>
+        <option value="Gasolina 95">Gasolina 95</option>
+        <option value="Gasolina 98">Gasolina 98</option>
+      </select>
+      <label class="checkbox">
+        <input type="checkbox" id="openNow">
+        Open Now
+      </label>
+      <button id="filterBtn">Filter</button>
+    </section>
+    <section id="stationsList" class="stations-list"></section>
+  </main>
+  <footer>
+    <p>Task 7-Ajax / AlvaroFuentesNev © 2024</p>
+  </footer>
+</body>
+
+</html>

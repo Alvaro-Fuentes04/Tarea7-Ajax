@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f9;
+  color: #333;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #0077cc;
+  text-shadow: 1px 1px 2px #00000050;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 10px;
+  margin-bottom: 30px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.filters label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.filters select,
+.filters input[type="checkbox"] {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.filters button {
+  grid-column: span 4;
+  padding: 10px;
+  font-size: 1rem;
+  color: #fff;
+  background: #0077cc;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.filters button:hover {
+  background: #005fa3;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.stations-list {
+  display: grid;
+  gap: 15px;
+}
+
+.station {
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.station:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.station h4 {
+  font-size: 1.25rem;
+  color: #0077cc;
+  margin-bottom: 10px;
+}
+
+.station p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+footer p {
+  margin: 0;
+}
+
+.loader {
+  width: 40px;
+  height: 20px;
+  background: orange;
+  position: relative;
+  animation: l9-0 1.5s infinite linear;
+}
+
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  background: inherit;
+  bottom: 100%;
+  width: 50%;
+  height: 100%;
+  animation: inherit;
+  animation-name: l9-1;
+}
+
+.loader:before {
+  left: 0;
+  transform-origin: bottom left;
+  --s: -1;
+}
+
+.loader:after {
+  right: 0;
+  transform-origin: bottom right;
+}
+
+@keyframes l9-0 {
+
+  0%,
+  10% {
+    transform: translateY(0%) scaleY(1)
+  }
+
+  49.99% {
+    transform: translateY(-50%) scaleY(1)
+  }
+
+  50% {
+    transform: translateY(-50%) scaleY(-1)
+  }
+
+  90%,
+  100% {
+    transform: translateY(-100%) scaleY(-1)
+  }
+}
+
+@keyframes l9-1 {
+
+  10%,
+  90% {
+    transform: rotate(0deg)
+  }
+
+  50% {
+    transform: rotate(calc(var(--s, 1)*180deg))
+  }
+}
+
+.price-low {
+  color: green;
+}
+
+.price-medium {
+  color: orange;
+}
+
+.price-high {
+  color: red;
+}
